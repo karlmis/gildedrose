@@ -13,7 +13,9 @@ public class ItemWrapperFactory {
         }
         if (AgedBrieItemWrapper.isApplicable(item)) {
             return new AgedBrieItemWrapper(item);
-
+        }
+        if (ConjuredItemWrapper.isApplicable(item)){
+            return new ConjuredItemWrapper(item);
         }
         return new DefaultItemWrapper(item);
 
