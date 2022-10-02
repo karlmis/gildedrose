@@ -2,11 +2,11 @@ package com.gildedrose.itemwrapper;
 
 import com.gildedrose.Item;
 
-class AgedBrieItemWrapper implements ItemWrapper {
-    private final Item item;
+class AgedBrieItemWrapper extends ItemWrapper {
+
 
     public AgedBrieItemWrapper(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override

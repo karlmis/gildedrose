@@ -1,5 +1,12 @@
 package com.gildedrose.itemwrapper;
 
-public interface ItemWrapper {
-    void update();
+import com.gildedrose.Item;
+
+public abstract class ItemWrapper {
+    protected final Item item;
+    public ItemWrapper(Item item) {
+        this.item= item;
+    }
+
+    public abstract void update();
 }

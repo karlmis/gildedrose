@@ -2,11 +2,10 @@ package com.gildedrose.itemwrapper;
 
 import com.gildedrose.Item;
 
-class BackstagePassItemWrapper implements ItemWrapper {
-    private final Item item;
+class BackstagePassItemWrapper extends ItemWrapper {
 
     public BackstagePassItemWrapper(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
