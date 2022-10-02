@@ -22,13 +22,12 @@ public abstract class ItemWrapper {
         return item.sellIn < x;
     }
 
-    boolean isQualityNotAtMax() {
-        return item.quality < 50;
+    void increaseQualityIfNotAtMaximum() {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
     }
 
-    void increaseQuality() {
-        item.quality = item.quality + 1;
-    }
     void decreaseQualityIfNotAtMinimum() {
         if (item.quality > 0) {
             item.quality = item.quality - 1;

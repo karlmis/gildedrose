@@ -12,19 +12,15 @@ class BackstagePassItemWrapper extends ItemWrapper {
     public void update() {
         decreateSellin();
 
-        if (isQualityNotAtMax()) {
-            increaseQuality();
+        if (item.quality < 50) {
+            increaseQualityIfNotAtMaximum();
 
             if (isSellinInLessThan(10)) {
-                if (isQualityNotAtMax()) {
-                    increaseQuality();
-                }
+                increaseQualityIfNotAtMaximum();
             }
 
             if (isSellinInLessThan(5)) {
-                if (isQualityNotAtMax()) {
-                    increaseQuality();
-                }
+                increaseQualityIfNotAtMaximum();
             }
         }
 

@@ -13,16 +13,13 @@ class AgedBrieItemWrapper extends ItemWrapper {
     public void update() {
         decreateSellin();
 
-        if (isQualityNotAtMax()) {
-            increaseQuality();
-        }
+        increaseQualityIfNotAtMaximum();
 
         if (isSellByDatePassed()) {
-            if (isQualityNotAtMax()) {
-                increaseQuality();
-            }
+            increaseQualityIfNotAtMaximum();
         }
     }
+
 
 
 
