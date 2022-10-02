@@ -5,13 +5,13 @@ import com.gildedrose.Item;
 public class ItemWrapperFactory {
 
     public ItemWrapper createWrapper(Item item) {
-        if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (SulfurasItemWrapper.ITEM_NAME.equals(item.name)) {
             return new SulfurasItemWrapper(item);
         }
-        if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+        if (BackstagePassItemWrapper.ITEM_NAME.equals(item.name)) {
             return new BackstagePassItemWrapper(item);
         }
-        if (item.name.equals("Aged Brie")) {
+        if (AgedBrieItemWrapper.ITEM_NAME.equals(item.name)) {
             return new AgedBrieItemWrapper(item);
 
         }

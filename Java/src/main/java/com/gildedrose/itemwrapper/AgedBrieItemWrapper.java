@@ -5,6 +5,8 @@ import com.gildedrose.Item;
 class AgedBrieItemWrapper extends ItemWrapper {
 
 
+    static final String ITEM_NAME = "Aged Brie";
+
     public AgedBrieItemWrapper(Item item) {
         super(item);
     }
