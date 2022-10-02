@@ -7,8 +7,9 @@ public abstract class ItemWrapper {
     private static final int MIN_QUALITY = 0;
 
     protected final Item item;
+
     public ItemWrapper(Item item) {
-        this.item= item;
+        this.item = item;
     }
 
     public abstract void update();
@@ -32,14 +33,17 @@ public abstract class ItemWrapper {
     }
 
     void decreaseQualityIfNotAtMinimum() {
-        if (item.quality > MIN_QUALITY) {
-            item.quality = item.quality - 1;
-        }
+        item.quality = Math.max(0, item.quality - 1);
+    }
+
+    void decreaseQualityDoubleIfNotAtMinimum() {
+        item.quality = Math.max(0, item.quality - 2);
     }
 
     boolean isQualityAtMaximum() {
         return item.quality < MAX_QUALITY;
     }
+
     void setQualityToMinimum() {
         item.quality = MIN_QUALITY;
     }
