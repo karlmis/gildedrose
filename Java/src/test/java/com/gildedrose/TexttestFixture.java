@@ -12,7 +12,7 @@ public class TexttestFixture {
         System.out.println(x);
     }
 
-    private static String getOutputStringFor(int days) {
+    public static String getOutputStringFor(int days) {
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
                 new Item("Aged Brie", 2, 0), //
@@ -38,8 +38,7 @@ public class TexttestFixture {
             sb.append("\n");
             app.updateQuality();
         }
-        String x = sb.toString();
-        return x;
+        return sb.toString();
     }
 
 }
