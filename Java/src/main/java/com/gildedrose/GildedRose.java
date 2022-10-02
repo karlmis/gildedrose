@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.itemwrapper.ItemWrapperFactory;
+
 class GildedRose {
     Item[] items;
 

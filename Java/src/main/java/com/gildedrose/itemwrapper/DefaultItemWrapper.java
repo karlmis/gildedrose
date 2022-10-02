@@ -1,4 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.itemwrapper;
+
+import com.gildedrose.Item;
 
 class DefaultItemWrapper implements ItemWrapper {
     private final Item item;

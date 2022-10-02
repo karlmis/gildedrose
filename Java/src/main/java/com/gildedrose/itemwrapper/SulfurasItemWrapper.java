@@ -1,4 +1,4 @@
-package com.gildedrose;
+package com.gildedrose.itemwrapper;
 
 class SulfurasItemWrapper implements ItemWrapper {
     @Override
