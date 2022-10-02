@@ -4,10 +4,14 @@ import com.gildedrose.Item;
 
 class BackstagePassItemWrapper extends ItemWrapper {
 
-    static final String ITEM_NAME = "Backstage passes to a TAFKAL80ETC concert";
+    private static final String ITEM_NAME = "Backstage passes to a TAFKAL80ETC concert";
 
     public BackstagePassItemWrapper(Item item) {
         super(item);
+    }
+
+    static boolean isApplicable(Item item){
+        return ITEM_NAME.equals(item.name);
     }
 
     @Override
