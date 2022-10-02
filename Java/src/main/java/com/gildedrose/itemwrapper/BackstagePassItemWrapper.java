@@ -12,7 +12,7 @@ class BackstagePassItemWrapper extends ItemWrapper {
     public void update() {
         decreateSellin();
 
-        if (item.quality < 50) {
+        if (isQualityAtMaximum()) {
             increaseQualityIfNotAtMaximum();
 
             if (isSellinInLessThan(10)) {
@@ -26,9 +26,8 @@ class BackstagePassItemWrapper extends ItemWrapper {
 
 
         if (isSellByDatePassed()) {
-            setQualityToZero();
+            setQualityToMinimum();
         }
     }
-
 
 }

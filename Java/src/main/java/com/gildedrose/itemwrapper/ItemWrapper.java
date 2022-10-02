@@ -3,6 +3,9 @@ package com.gildedrose.itemwrapper;
 import com.gildedrose.Item;
 
 public abstract class ItemWrapper {
+    private static final int MAX_QUALITY = 50;
+    private static final int MIN_QUALITY = 0;
+
     protected final Item item;
     public ItemWrapper(Item item) {
         this.item= item;
@@ -23,18 +26,21 @@ public abstract class ItemWrapper {
     }
 
     void increaseQualityIfNotAtMaximum() {
-        if (item.quality < 50) {
+        if (item.quality < MAX_QUALITY) {
             item.quality = item.quality + 1;
         }
     }
 
     void decreaseQualityIfNotAtMinimum() {
-        if (item.quality > 0) {
+        if (item.quality > MIN_QUALITY) {
             item.quality = item.quality - 1;
         }
     }
 
-    void setQualityToZero() {
-        item.quality = 0;
+    boolean isQualityAtMaximum() {
+        return item.quality < MAX_QUALITY;
+    }
+    void setQualityToMinimum() {
+        item.quality = MIN_QUALITY;
     }
 }
