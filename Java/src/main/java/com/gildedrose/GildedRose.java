@@ -9,15 +9,18 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                //do nothing
-            } else {
-                updateQualityNonSulfuras(i);
-            }
+            updateQuality(i);
         }
     }
 
-    private void updateQualityNonSulfuras(int i) {
+    private void updateQuality(int i) {
+        if (items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+            return;
+        }
+        updateQualityDefault(i);
+    }
+
+    private void updateQualityDefault(int i) {
         items[i].sellIn = items[i].sellIn - 1;
 
         if (items[i].name.equals("Aged Brie")
