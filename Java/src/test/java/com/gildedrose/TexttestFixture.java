@@ -4,6 +4,15 @@ public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
 
+        int days = 18;
+        if (args.length > 0) {
+            days = Integer.parseInt(args[0]) + 1;
+        }
+        String x = getOutputStringFor(days);
+        System.out.println(x);
+    }
+
+    private static String getOutputStringFor(int days) {
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
                 new Item("Aged Brie", 2, 0), //
@@ -18,20 +27,19 @@ public class TexttestFixture {
 
         GildedRose app = new GildedRose(items);
 
-        int days = 2;
-        if (args.length > 0) {
-            days = Integer.parseInt(args[0]) + 1;
-        }
 
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < days; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
+            sb.append("-------- day ").append(i).append(" --------").append("\n");
+            sb.append("name, sellIn, quality").append("\n");
             for (Item item : items) {
-                System.out.println(item);
+                sb.append(item).append("\n");
             }
-            System.out.println();
+            sb.append("\n");
             app.updateQuality();
         }
+        String x = sb.toString();
+        return x;
     }
 
 }
