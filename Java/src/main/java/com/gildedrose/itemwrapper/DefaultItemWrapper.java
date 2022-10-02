@@ -12,18 +12,12 @@ class DefaultItemWrapper extends ItemWrapper {
     public void update() {
         decreateSellin();
 
-        if (isQualityNotAtMinimum()) {
-            decreaseQuality();
-        }
+        decreaseQualityIfNotAtMinimum();
 
         if (isSellByDatePassed()) {
-            if (isQualityNotAtMinimum()) {
-                decreaseQuality();
-            }
+            decreaseQualityIfNotAtMinimum();
         }
     }
-
-
 
 
 }

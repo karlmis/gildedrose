@@ -14,8 +14,6 @@ public abstract class ItemWrapper {
         return item.sellIn < 0;
     }
 
-
-
     void decreateSellin() {
         item.sellIn = item.sellIn - 1;
     }
@@ -24,20 +22,17 @@ public abstract class ItemWrapper {
         return item.sellIn < x;
     }
 
-
     boolean isQualityNotAtMax() {
         return item.quality < 50;
-    }
-
-    boolean isQualityNotAtMinimum() {
-        return item.quality > 0;
     }
 
     void increaseQuality() {
         item.quality = item.quality + 1;
     }
-    void decreaseQuality() {
-        item.quality = item.quality - 1;
+    void decreaseQualityIfNotAtMinimum() {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
+        }
     }
 
     void setQualityToZero() {
