@@ -15,10 +15,6 @@ public class ItemWrapperFactory {
             return new ItemWrapper() {
                 @Override
                 public void update() {
-                    updateQualityBackstagePass(item);
-                }
-
-                private void updateQualityBackstagePass(Item item) {
                     item.sellIn = item.sellIn - 1;
 
                     if (item.quality < 50) {
@@ -42,16 +38,13 @@ public class ItemWrapperFactory {
                         item.quality = 0;
                     }
                 }
+
             };
         }
         if (item.name.equals("Aged Brie")) {
             return new ItemWrapper() {
                 @Override
                 public void update() {
-                    updateQualityAgedBrie(item);
-                }
-
-                private void updateQualityAgedBrie(Item item) {
                     item.sellIn = item.sellIn - 1;
 
                     if (item.quality < 50) {
@@ -72,10 +65,6 @@ public class ItemWrapperFactory {
         return new ItemWrapper() {
             @Override
             public void update() {
-                updateQualityDefault(item);
-            }
-
-            private void updateQualityDefault(Item item) {
                 item.sellIn = item.sellIn - 1;
 
                 if (item.quality > 0) {
