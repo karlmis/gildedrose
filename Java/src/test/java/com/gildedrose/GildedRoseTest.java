@@ -25,7 +25,6 @@ class GildedRoseTest {
         URL resourceUri = GildedRoseTest.class.getClassLoader().getResource("goldenmaster.txt");
 
         Path path = Paths.get(resourceUri.toURI());
-        System.out.println("outputStringFor = " + outputStringFor+"\na");
         assertThat(path).hasContent(outputStringFor);
     }
 }
